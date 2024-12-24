@@ -1,5 +1,8 @@
 <div>
 
+    <h1>{{ $title }}</h1>
+    <h2>{{ count($users) }}</h2>
+
     {{-- button --}}
     <button
         wire:click="handleClick"
