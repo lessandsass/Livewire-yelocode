@@ -3,14 +3,21 @@
 namespace App\Livewire;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 
 class Clicker extends Component
 {
 
-    public function handleClick()
+    public $username = "testuser";
+
+    public function createNewUser()
     {
-        dump('clicked');
+        User::create([
+            'name' => 'Test User2',
+            'email' => 'test@example2.com',
+            'password' => Hash::make('password'),
+        ]);
     }
 
     public function render()
