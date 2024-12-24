@@ -18,9 +18,6 @@ class Clicker extends Component
         $title = "test";
         $users = User::all();
 
-        return view('livewire.clicker', [
-            'title' => $title,
-            'users' => $users
-        ]);
+        return view('livewire.clicker', compact('title', 'users'));
     }
 }
