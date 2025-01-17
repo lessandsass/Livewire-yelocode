@@ -15,6 +15,8 @@ class Clicker extends Component
 
     public function createNewUser()
     {
+        // validating the form fields
+
         User::create([
             'name' =>$this->name,
             'email' => $this->email,
