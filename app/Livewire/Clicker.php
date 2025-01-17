@@ -9,14 +9,16 @@ use Livewire\Component;
 class Clicker extends Component
 {
 
-    public $username = "testuser";
+    public $name;
+    public $email;
+    public $password;
 
     public function createNewUser()
     {
         User::create([
-            'name' => 'Test User2',
-            'email' => 'test@example2.com',
-            'password' => Hash::make('password'),
+            'name' =>$this->name,
+            'email' => $this->email,
+            'password' => Hash::make($this->password),
         ]);
     }
 
@@ -25,6 +27,6 @@ class Clicker extends Component
         $title = "test";
         $users = User::all();
 
-        return view('livewire.clicker', compact('title', 'users'));
+        return view('livewire.clicker', compact('users'));
     }
 }

@@ -1,6 +1,9 @@
 <div>
 
-    <form action="" class="m-3 p-3">
+    <form
+        wire:submit="createNewUser"
+        class="m-3 p-3"
+    >
 
         {{-- input name --}}
         <div class="mb-2">
@@ -19,8 +22,18 @@
         </div>
 
         <div class="mb-2">
-            <button wire:click.prevent="createNewUser" class="border-2 border-gray-700 p-2 rounded-lg">Create</button>
+            <button
+                class="border-2 border-gray-700 p-2 rounded-lg"
+            >
+                Create
+            </button>
         </div>
+
+        <hr>
+
+        @foreach ($users as $user)
+            <p>{{ $user->name }}</p>
+        @endforeach
 
     </form>
 
